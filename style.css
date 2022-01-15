@@ -3,12 +3,34 @@ body {
 }
 
 h1 {
-  font-size: 10rem;
+  font-size: 8rem;
   margin: 0;
 }
 
+p {
+  font-size: 2rem;
+  margin-bottom: 5px;
+}
+
 img {
-  width: 12rem;
+  height: 12rem;
+  border-radius: 5px;
+}
+
+button {
+  border-radius: 3px;
+  border-color: black;
+  background-color: #FF5349;
+  width: 7.5rem;
+  height: 2.5rem;
+}
+
+button:hover {
+  background-color: #FF1311;
+}
+
+button:active {
+  background-color: lightgreen;
 }
 
 .container {
@@ -16,7 +38,13 @@ img {
   margin: auto;
   color: #FF5349;
 }
+
 .dealer {
 width: auto;
 margin-bottom: 5rem;
+}
+
+.total {
+  font-size: 1.5rem;
+  margin: 10px auto;
 }
