@@ -186,6 +186,7 @@ function hit() {
     document.getElementById("playerOneTotal").innerHTML = playerOneTotal;
     if (playerOneLow >= 22) {
       document.querySelector("h1").innerHTML = "Player One Bust";
+      gameOver()
     }
   } else {
     playerOneTotal += cardNum;
@@ -193,6 +194,7 @@ function hit() {
 
     if (playerOneTotal >= 22) {
       document.querySelector("h1").innerHTML = "Player One Bust";
+      gameOver()
     }
   }
 }
@@ -255,7 +257,8 @@ function addDealerCard() {
     document.getElementById("dealerTotal").innerHTML = hiddenDealerTotal;
     if (hiddenDealerLow >= 22) {
       document.querySelector("h1").innerHTML = "Dealer Bust";
-      isOver = true;
+
+      gameOver()
     }
   } else {
     hiddenDealerTotal += newDealerNum;
@@ -263,7 +266,7 @@ function addDealerCard() {
 
     if (hiddenDealerTotal >= 22) {
       document.querySelector("h1").innerHTML = "Dealer Bust";
-      isOver = true;
+      gameOver()
     }
   }
 }
@@ -280,7 +283,7 @@ function check() {
       } else {
         document.querySelector("h1").innerHTML = "Draw";
       }
-      isOver = true;
+      gameOver()
     }
     document.getElementById("dealerTotal").innerHTML = hiddenDealerHigh;
   } else {
@@ -292,8 +295,14 @@ function check() {
       } else {
         document.querySelector("h1").innerHTML = "Draw";
       }
-      isOver = true;
+      gameOver()
     }
     document.getElementById("dealerTotal").innerHTML = hiddenDealerTotal;
   }
+}
+
+function gameOver() {
+  document.getElementById("hitButton").disabled = true;
+  document.getElementById("standButton").disabled = true;
+  isOver = true;
 }
