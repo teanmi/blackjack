@@ -3,7 +3,7 @@ body {
 }
 
 h1 {
-  font-size: 8rem;
+  font-size: 6rem;
   margin: 0;
 }
 
@@ -41,10 +41,14 @@ button:active {
 
 .dealer {
 width: auto;
-margin-bottom: 5rem;
+margin: 2% auto;
 }
 
 .total {
   font-size: 1.5rem;
   margin: 10px auto;
+}
+
+@media screen(min-width 900) {
+  
 }

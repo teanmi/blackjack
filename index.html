@@ -12,19 +12,25 @@
       <h1>Blackjack</h1>
       <div class="dealer">
         <p>Dealer</p>
-        <img id="dealerCardOne" src="images/1a1.png" alt="" />
-        <img id="dealerCardTwo" src="images/backcard.jpg" />
+        <div id="dealerExtraCards">
+          <img id="dealerCardOne" src="images/backcard.jpg" />
+          <img id="dealerCardTwo" src="images/backcard.jpg" />
+        </div>
 
         <p class="total">Total: <span id="dealerTotal"></span></p>
       </div>
 
       <div class="playerOne">
         <p>Player 1</p>
-        <img id="playerOneCardOne" src="images/1a1.png" alt="" />
-        <img id="playerOneCardTwo" src="images/1a1.png" />
+        <div id="playerOneExtraCards">
+          <img id="playerOneCardOne" src="images/backcard.jpg" alt="" />
+          <img id="playerOneCardTwo" src="images/backcard.jpg" />
+        </div>
+
+        </div>
         <p class="total">Total: <span id="playerOneTotal"></span></p>
-        <button>Hit</button>
-        <button>Stay</button>
+        <button onclick="hit()">Hit</button>
+        <button onclick="stand()">Stand</button>
       </div>
     </div>
 
