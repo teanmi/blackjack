@@ -186,7 +186,14 @@ function hit() {
     document.getElementById("playerOneTotal").innerHTML = playerOneTotal;
     if (playerOneLow >= 22) {
       document.querySelector("h1").innerHTML = "Player One Bust";
-      gameOver()
+      document
+        .getElementById("dealerCardTwo")
+        .setAttribute("src", dealerCardTwoImg);
+      dealerAce
+        ? (document.getElementById("dealerTotal").innerHTML = hiddenDealerHigh)
+        : (document.getElementById("dealerTotal").innerHTML =
+            hiddenDealerTotal);
+      gameOver();
     }
   } else {
     playerOneTotal += cardNum;
@@ -194,7 +201,14 @@ function hit() {
 
     if (playerOneTotal >= 22) {
       document.querySelector("h1").innerHTML = "Player One Bust";
-      gameOver()
+      document
+        .getElementById("dealerCardTwo")
+        .setAttribute("src", dealerCardTwoImg);
+      dealerAce
+        ? (document.getElementById("dealerTotal").innerHTML = hiddenDealerHigh)
+        : (document.getElementById("dealerTotal").innerHTML =
+            hiddenDealerTotal);
+      gameOver();
     }
   }
 }
@@ -213,6 +227,7 @@ function stand() {
     .setAttribute("src", dealerCardTwoImg);
 
   check();
+  update();
   while (!isOver) {
     addDealerCard();
     check();
@@ -258,7 +273,7 @@ function addDealerCard() {
     if (hiddenDealerLow >= 22) {
       document.querySelector("h1").innerHTML = "Dealer Bust";
 
-      gameOver()
+      gameOver();
     }
   } else {
     hiddenDealerTotal += newDealerNum;
@@ -266,7 +281,7 @@ function addDealerCard() {
 
     if (hiddenDealerTotal >= 22) {
       document.querySelector("h1").innerHTML = "Dealer Bust";
-      gameOver()
+      gameOver();
     }
   }
 }
@@ -283,7 +298,7 @@ function check() {
       } else {
         document.querySelector("h1").innerHTML = "Draw";
       }
-      gameOver()
+      gameOver();
     }
     document.getElementById("dealerTotal").innerHTML = hiddenDealerHigh;
   } else {
@@ -295,7 +310,7 @@ function check() {
       } else {
         document.querySelector("h1").innerHTML = "Draw";
       }
-      gameOver()
+      gameOver();
     }
     document.getElementById("dealerTotal").innerHTML = hiddenDealerTotal;
   }
@@ -305,4 +320,13 @@ function gameOver() {
   document.getElementById("hitButton").disabled = true;
   document.getElementById("standButton").disabled = true;
   isOver = true;
+  setTimeout(function () {
+    document.getElementById("gameOver").style.visibility = "visible";
+  }, 1500);
+}
+
+function update() {
+  document.getElementById("dealerTotal").innerHTML = hiddenDealerHigh
+    ? hiddenDealerHigh
+    : hiddenDealerTotal;
 }

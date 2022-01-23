@@ -23,16 +23,21 @@
       <div class="playerOne">
         <p>Player 1</p>
         <div id="playerOneExtraCards">
-          <img id="playerOneCardOne" src="images/backcard.jpg" alt="" />
+          <img id="playerOneCardOne" src="images/backcard.jpg" />
           <img id="playerOneCardTwo" src="images/backcard.jpg" />
         </div>
 
         </div>
         <p class="total">Total: <span id="playerOneTotal"></span></p>
-        <button onclick="hit()">Hit</button>
-        <button onclick="stand()">Stand</button>
+        <button id="hitButton" onclick="hit()">Hit</button>
+        <button id="standButton" onclick="stand()">Stand</button>
       </div>
     </div>
+    <div id="gameOver">
+      <p>New Game?</p>
+      <button class="reloadbtn" onclick="window.location.reload()">Refresh</button>
+    </div>
+    
 
     <script src="index.js"></script>
   </body>
